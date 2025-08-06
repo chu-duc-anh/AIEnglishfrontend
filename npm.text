@@ -1,0 +1,31 @@
+backend:
+npm install express
+node server.js
+
+frontend:
+npm install
+npm run build
+npm run dev
+
+mongodb+srv://ducanhne:HUONGHUONG00@imnovel.kjq1zqn.mongodb.net/
+
+jfjleptevaspnezm
+
+Male: https://i.imgur.com/rNTOOMm.jpeg
+Female: https://i.imgur.com/Kqkfd69.jpeg
+
+tk: aienglish.io.vn
+mk: CQGw25qFd8g6
+IP address: 112.213.89.150
+
+MONGO_URI=mongodb+srv://chuducanh:HUONGHUONG00@cluster0.nimatis.mongodb.net/mydb?retryWrites=true&w=majority
+PORT=5000
+JWT_SECRET="browncuteahihi123456789"
+API_KEY="AIzaSyDnFGXxyb2hTKhnXpFxHOBBQB_3kiSSsFE"
+; emailqtv
+EMAIL_USER=chuducanh4511@gmail.com
+EMAIL_PASS=jfjleptevaspnezm
+
+; MONGO_URI=mongodb://127.0.0.1:27017/chatdb
+; PORT=5000
+; JWT_SECRET="browncuteahihi123456789"
