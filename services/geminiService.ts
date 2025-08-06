@@ -22,7 +22,7 @@ const apiRequest = async (endpoint: string, options: RequestInit = {}) => {
         ...options.headers,
     };
 
-    const response = await fetch(`${BACKEND_URL}${API_PATH}${endpoint}`, { ...options, headers });
+    const response = await fetch(`${BACKEND_URL}${API_PATH}${endpoint}`, { ...options, headers, credentials: 'include' });
 
     if (!response.ok) {
         const errorData = await response.json().catch(() => ({ 
