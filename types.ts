@@ -1,3 +1,12 @@
+// This declaration tells TypeScript about Vite's import.meta.env and fixes related errors.
+declare global {
+  interface ImportMeta {
+    readonly env: {
+      readonly VITE_API_URL: string;
+    };
+  }
+}
+
 export interface User {
   id: string; // MongoDB _id
   username: string;
