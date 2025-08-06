@@ -21,7 +21,7 @@ const apiRequest = async (path: string, options: RequestInit = {}) => {
         (headers as Record<string, string>)['Authorization'] = `Bearer ${token}`;
     }
 
-    const response = await fetch(`${BACKEND_URL}${path}`, { ...options, headers });
+    const response = await fetch(`${BACKEND_URL}${path}`, { ...options, headers, credentials: 'include' });
 
     if (!response.ok) {
         const errorData = await response.json().catch(() => ({ message: `Request failed with status ${response.status}` }));
