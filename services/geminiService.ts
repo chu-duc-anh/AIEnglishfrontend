@@ -1,8 +1,9 @@
 
 
+
 import type { StoredChatMessage } from '../types';
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const API_PATH = '/api/ai';
 
 const defaultResponse = {
