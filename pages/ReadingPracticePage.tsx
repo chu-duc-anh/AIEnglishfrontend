@@ -76,7 +76,7 @@ const ScoreBreakdownCard: React.FC<{score: number, title: string, description: s
 };
 
 
-const ReadingPracticePage: React.FC = () => {
+const SpeakingPracticePage: React.FC = () => {
     const [practiceMode, setPracticeMode] = useState<PracticeMode>(null);
     const [practiceState, setPracticeState] = useState<PracticeState>('selection');
     const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
@@ -203,8 +203,8 @@ const ReadingPracticePage: React.FC = () => {
 
     const renderSelectionScreen = () => (
         <div className="animate-fade-in">
-             <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Reading Practice</h1>
-             <p className="text-gray-600 dark:text-gray-400 mb-8 text-center">Choose a mode to improve your reading and pronunciation.</p>
+             <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">Speaking Practice</h1>
+             <p className="text-gray-600 dark:text-gray-400 mb-8 text-center">Choose a mode to improve your speaking and pronunciation.</p>
             {!practiceMode ? (
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <button onClick={() => setPracticeMode('vocabulary')} className="text-left bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:border-teal-500 dark:hover:border-teal-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -215,7 +215,7 @@ const ReadingPracticePage: React.FC = () => {
                     <button onClick={() => { setPracticeMode('sentence'); handleGenerateSentence(); }} className="text-left bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <MessageSquare className="w-10 h-10 text-indigo-600 dark:text-indigo-400 mb-3" />
                         <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">Random Sentence</h2>
-                        <p className="text-gray-600 dark:text-gray-400 mt-1">Let the AI generate a random sentence for you to read.</p>
+                        <p className="text-gray-600 dark:text-gray-400 mt-1">Let the AI generate a random sentence for you to say aloud.</p>
                     </button>
                 </div>
             ) : (
@@ -249,7 +249,7 @@ const ReadingPracticePage: React.FC = () => {
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
             </button>
             <div>
-                <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center"><BookText className="mr-2"/>Your Text to Read</h2>
+                <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center"><BookText className="mr-2"/>Your Text to Speak</h2>
                 <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-lg border border-gray-200 dark:border-gray-700 text-center">
                     <div className="flex items-center justify-center gap-4">
                         <p className="text-4xl font-bold leading-relaxed">{currentItem?.text}</p>
@@ -257,7 +257,7 @@ const ReadingPracticePage: React.FC = () => {
                             <button
                                 onClick={handleSpeak}
                                 className="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-full"
-                                aria-label="Read word aloud"
+                                aria-label="Say word aloud"
                             >
                                 {speakingId === currentItem.text ? <VolumeX size={32} className="text-indigo-500"/> : <Volume2 size={32} />}
                             </button>
@@ -274,7 +274,7 @@ const ReadingPracticePage: React.FC = () => {
                     <div className="flex items-center text-yellow-700 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-lg"><AlertTriangle className="h-6 w-6 mr-3" /><span>{speechError}</span></div>
                 ) : (
                     <>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">Click the button and read the text above aloud.</p>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">Click the button and say the text above aloud.</p>
                         <MicButton isListening={isListening} isProcessing={false} onClick={handleMicClick} />
                         {isListening && userTranscript && (<div className="w-full mt-4 p-3 bg-indigo-50 dark:bg-gray-700/50 rounded-lg text-gray-600 dark:text-gray-300 italic text-center">{userTranscript}</div>)}
                     </>
@@ -330,4 +330,4 @@ const ReadingPracticePage: React.FC = () => {
     );
 };
 
-export default ReadingPracticePage;
+export default SpeakingPracticePage;
