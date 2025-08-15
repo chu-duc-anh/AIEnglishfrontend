@@ -53,20 +53,20 @@ const HomePage: React.FC<HomePageProps> = ({ currentUser }) => {
             </button>
           </div>
           
-          {/* Reading Practice Card */}
+          {/* Speaking Practice Card */}
           <div className={cardBaseClasses}>
             <div className="flex items-center text-teal-600 dark:text-teal-400 mb-3">
                 <BookOpen className="w-7 h-7 mr-3" />
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Reading Practice</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Speaking Practice</h2>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">
-                Generate a custom text and get instant feedback on your reading and pronunciation.
+                Practice sentences and vocabulary and get instant feedback on your pronunciation.
             </p>
             <button
                 onClick={() => handleCardClick('/reading-practice')}
                 className="w-full bg-teal-600 text-white hover:bg-teal-700 font-semibold py-3 px-6 rounded-lg transition-colors mt-auto"
             >
-                Practice Reading
+                Practice Speaking
             </button>
           </div>
 
