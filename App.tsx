@@ -11,7 +11,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import ConversationListPage from './pages/ConversationListPage';
 import ProfilePage from './pages/ProfilePage';
-import ReadingPracticePage from './pages/ReadingPracticePage';
+import SpeakingPracticePage from './pages/ReadingPracticePage';
 import { logout, getProfile, authEvents } from './services/authService';
 import type { User } from './types';
 import Header from './components/Header';
@@ -98,7 +98,7 @@ const App: React.FC = () => {
               <Route path="/conversations" element={<ProtectedRoute><ConversationListPage currentUser={currentUser!} /></ProtectedRoute>} />
               <Route path="/setup" element={<ProtectedRoute><SetupPage currentUser={currentUser!} /></ProtectedRoute>} />
               <Route path="/chat/:conversationId" element={<ProtectedRoute><ChatPage currentUser={currentUser!} /></ProtectedRoute>} />
-              <Route path="/reading-practice" element={<ProtectedRoute><ReadingPracticePage /></ProtectedRoute>} />
+              <Route path="/reading-practice" element={<ProtectedRoute><SpeakingPracticePage /></ProtectedRoute>} />
               <Route
                 path="/admin"
                 element={
