@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, User, Send, ArrowLeft } from 'lucide-react';
+import { Mail, Send, ArrowLeft } from 'lucide-react';
 import { requestPasswordReset } from '../services/authService';
 
 const ForgotPasswordPage: React.FC = () => {
-    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -14,13 +13,13 @@ const ForgotPasswordPage: React.FC = () => {
         e.preventDefault();
         setError('');
         setSuccess('');
-        if (!username || !email) {
-            setError('Please enter both your username and email.');
+        if (!email) {
+            setError('Please enter your email address.');
             return;
         }
         setIsLoading(true);
         try {
-            const res = await requestPasswordReset(username, email);
+            const res = await requestPasswordReset(email);
             setSuccess(res.message);
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred.';
@@ -45,22 +44,9 @@ const ForgotPasswordPage: React.FC = () => {
                     ) : (
                         <>
                             <h2 className="text-center text-3xl font-extrabold text-gray-900 dark:text-gray-100">Reset Your Password</h2>
-                            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-2">Enter your username and email address, and we'll send you a link to get back into your account.</p>
+                            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-2">Enter your email address, and we'll send you a link to get back into your account.</p>
                             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                                 <div className="space-y-4">
-                                     <div>
-                                        <input
-                                        id="username"
-                                        name="username"
-                                        type="text"
-                                        autoComplete="username"
-                                        required
-                                        className="appearance-none relative block w-full px-3 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                                        placeholder="Username"
-                                        value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
-                                        />
-                                    </div>
                                     <div>
                                         <input
                                         id="email"
