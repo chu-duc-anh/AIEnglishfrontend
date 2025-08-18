@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser, onLogout }) => {
   return (
     <header className="bg-white dark:bg-gray-800 p-4 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
       <Link to="/" className="text-xl font-bold text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-        English Speaking Practice
+        AI English Assistant
       </Link>
       <div className="flex items-center space-x-4">
          <button
