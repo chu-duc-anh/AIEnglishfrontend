@@ -1,5 +1,5 @@
 {
-  "name": "AI English Speaking Coach",
+  "name": "AI English Assistant",
   "description": "An application to practice English speaking with an AI assistant. It features voice recognition, simulated pronunciation feedback, and on-demand translation.",
   "requestFramePermissions": [
     "microphone"
