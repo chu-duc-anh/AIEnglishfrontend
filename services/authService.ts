@@ -112,10 +112,10 @@ export const changePassword = async (currentPassword: string, newPassword: strin
 };
 
 // --- Password Reset Functions ---
-export const requestPasswordReset = async (username: string, email: string): Promise<{ message: string }> => {
+export const requestPasswordReset = async (email: string): Promise<{ message: string }> => {
     return await apiRequest('/api/auth/forgot-password', {
         method: 'POST',
-        body: JSON.stringify({ username, email }),
+        body: JSON.stringify({ email }),
     });
 };
 
