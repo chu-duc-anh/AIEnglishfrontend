@@ -26,7 +26,7 @@ const HomePage: React.FC<HomePageProps> = ({ currentUser }) => {
       {/* Hero Section */}
       <section className="bg-indigo-50 dark:bg-gray-800 text-center py-16 sm:py-20 px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-          Practice English with Your AI Assistant
+          Start communicating with your AI assistant
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Improve your pronunciation and conversation skills through interactive role-playing scenarios.
